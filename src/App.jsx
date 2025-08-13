@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import "./App.css";
+import BMI from "./Lib/BMI.jsx"
 
 function App() {
 	// const [count, setCount] = useState(0);
@@ -11,6 +12,7 @@ function App() {
 
 				{/* Form Component */}
 				{/* Modal Component */}
+				<BMI></BMI>
 				{/* Result Component */}
 				{/* History Component */}
 			</div>
