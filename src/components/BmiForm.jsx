@@ -22,7 +22,26 @@ const BmiForm = () => {
 
 	const calcBmiHandler = (e) => {
 		e.preventDefault();
+
+		let bmi = 0;
+
+		const num_weight = parseFloat(weight);
+		const num_Meter_height = parseFloat(height) * 0.01;
+
+		if (!imperial) {
+			bmi = num_weight / (num_Meter_height * num_Meter_height);
+			console.log(bmi.toFixed(1));
+		} else {
+			let feet = Number(imperialHeight.feet);
+			let inches = Number(imperialHeight.inches);
+
+			let totalInches = feet * 12 + inches;
+
+			bmi = 703 * (weight / (totalInches * totalInches));
+			console.log(bmi.toFixed(1));
+		}
 	};
+
 	return (
 		<>
 			<form
@@ -87,14 +106,18 @@ const BmiForm = () => {
 										placeholder="6 ft"
 										min="1"
 										max="12"
+										step="1"
 										required
 										value={imperialHeight.feet}
-										onChange={(e) =>
+										onChange={(e) => {
+											const value = Math.floor(
+												Number(e.target.value)
+											); // to remove decimals
 											setImperialHeight({
 												...imperialHeight,
-												feet: e.target.value,
-											})
-										}
+												feet: value,
+											});
+										}}
 									/>
 									<input
 										className="w-1/2 input-field "
@@ -104,14 +127,18 @@ const BmiForm = () => {
 										placeholder="3 in"
 										min="0"
 										max="11"
+										step="1"
 										required
 										value={imperialHeight.inches}
-										onChange={(e) =>
+										onChange={(e) => {
+											const value = Math.floor(
+												Number(e.target.value)
+											);
 											setImperialHeight({
 												...imperialHeight,
-												inches: e.target.value,
-											})
-										}
+												inches: value,
+											});
+										}}
 									/>
 								</>
 							)}
