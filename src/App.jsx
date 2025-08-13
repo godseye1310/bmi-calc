@@ -6,16 +6,23 @@ function App() {
 
 	return (
 		<>
-			<div>
-				<h1 className="text-5xl bg-amber-900 m-5 p-5">
-					BMI CALCULATOR
+			<div className="w-full">
+				<h1 className="app-heading">
+					BMI Calculator
+					{/* bg-clip-text text-transparent */}
 				</h1>
 
-				{/* Form Component */}
-				<BmiForm />
-				{/* Modal Component */}
-				{/* Result Component */}
-				{/* History Component */}
+				<div className="">
+					{/* Form Component */}
+					<BmiForm />
+
+					{/* 
+						// Modal Component 
+						// Result Component 
+					*/}
+
+					{/* History Component */}
+				</div>
 			</div>
 		</>
 	);

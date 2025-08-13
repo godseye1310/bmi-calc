@@ -12,12 +12,17 @@ const BmiForm = () => {
 	});
 	// const [weightImperial, setWeightImperial] = useState(null);
 
-	const switchMetric = () => {
+	const switchMetric = (e) => {
 		// console.log("switchMetric");
+		// console.log(e.target);
+		e.target.innerText === "Metric"
+			? setImperial(false)
+			: setImperial(true);
+		// clear inputs
 		setHeight("");
 		setWeight("");
 		setImperialHeight({ feet: "", inches: "" });
-		setImperial((prev) => !prev);
+		// setImperial(!imperial);
 	};
 
 	const calcBmiHandler = (e) => {
@@ -46,24 +51,26 @@ const BmiForm = () => {
 		<>
 			<form
 				onSubmit={calcBmiHandler}
-				className="p-5 bg-white rounded-2xl shadow text-center max-w-lg w-full mx-auto mt-10"
+				className="p-5 bg-neutral-900/65 opacity-90 rounded-2xl shadow text-center max-w-lg w-full mx-auto mt-6"
 			>
 				<div className="bg-indigo-300 rounded-4xl w-fit mx-auto">
 					<button
-						className={`rounded-s-4xl px-6 py-2 text-lg bg-indigo-300 hover:bg-indigo-400 ${
-							!imperial && "bg-indigo-500 hover:bg-indigo-500"
+						className={`rounded-s-4xl px-6 py-2 text-lg text-neutral-900 bg-indigo-300 hover:bg-indigo-500 ${
+							!imperial &&
+							"bg-indigo-600 hover:bg-indigo-600 text-white"
 						}`}
 						type="button"
-						onClick={() => switchMetric()}
+						onClick={(e) => switchMetric(e)}
 					>
 						Metric
 					</button>
 					<button
-						className={`rounded-e-4xl px-6 py-2 text-lg bg-indigo-300 hover:bg-indigo-400  ${
-							imperial && "bg-indigo-500 hover:bg-indigo-500"
+						className={`rounded-e-4xl px-6 py-2 text-lg text-neutral-900 bg-indigo-300 hover:bg-indigo-500  ${
+							imperial &&
+							"bg-indigo-600 hover:bg-indigo-600 text-white"
 						} `}
 						type="button"
-						onClick={() => switchMetric()}
+						onClick={(e) => switchMetric(e)}
 					>
 						Imperial
 					</button>
@@ -73,7 +80,7 @@ const BmiForm = () => {
 					{/* Height Input  */}
 					<div className="max-w-60 w-full flex flex-col gap-1.5 justify-center items-center">
 						<label
-							className="text-lg text-neutral-500"
+							className="text-lg text-neutral-300"
 							htmlFor="height"
 						>
 							Height{" "}
@@ -84,7 +91,7 @@ const BmiForm = () => {
 						<div className=" w-full flex gap-1 justify-center">
 							{!imperial && (
 								<input
-									className="w-full input-field "
+									className="w-full input-field font-medium"
 									type="number"
 									name="height"
 									id="height"
@@ -148,7 +155,7 @@ const BmiForm = () => {
 					{/* Weight Input */}
 					<div className="max-w-60 w-full flex flex-col gap-1.5 justify-center items-center">
 						<label
-							className="text-lg text-neutral-500"
+							className="text-lg text-neutral-300"
 							htmlFor="weight"
 						>
 							Weight <span>{imperial ? "(lbs)" : "(kg)"}</span>
