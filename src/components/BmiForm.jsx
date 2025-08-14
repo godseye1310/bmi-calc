@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Card from "./ui/Card";
 
 const BmiForm = () => {
 	const [imperial, setImperial] = useState(false);
@@ -48,11 +49,8 @@ const BmiForm = () => {
 	};
 
 	return (
-		<>
-			<form
-				onSubmit={calcBmiHandler}
-				className="p-5 bg-neutral-900/65 opacity-90 rounded-2xl shadow text-center max-w-lg w-full mx-auto mt-6"
-			>
+		<Card className={"max-w-lg w-full mx-auto mt-6"}>
+			<form onSubmit={calcBmiHandler} className=" w-full">
 				<div className="bg-indigo-300 rounded-4xl w-fit mx-auto">
 					<button
 						className={`rounded-s-4xl px-6 py-2 text-lg text-neutral-900 bg-indigo-300 hover:bg-indigo-500 ${
@@ -183,7 +181,7 @@ const BmiForm = () => {
 					</button>
 				</div>
 			</form>
-		</>
+		</Card>
 	);
 };
 

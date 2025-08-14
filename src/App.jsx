@@ -1,16 +1,14 @@
 // import { useState } from "react";
+import { useState } from "react";
 import BmiForm from "./components/BmiForm";
 
 function App() {
-	// const [count, setCount] = useState(0);
+	const [bmi, setBmi] = useState(0);
 
 	return (
 		<>
 			<div className="w-full">
-				<h1 className="app-heading">
-					BMI Calculator
-					{/* bg-clip-text text-transparent */}
-				</h1>
+				<h1 className="app-heading">BMI CALCULATOR</h1>
 
 				<div className="">
 					{/* Form Component */}
