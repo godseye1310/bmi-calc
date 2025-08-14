@@ -56,26 +56,23 @@ function App() {
 					</span>
 				</h1>
 
-				<div className="">
+				<div className="flex flex-wrap justify-center items-stretch gap-9">
 					{/* Form Component */}
 					<BmiForm handleBmiResult={handleBmiResult} />
-
-					{/* 
-						// Modal Component 
-						// Result Component 
-					*/}
-					{overlayIsShown && (
-						<Result bmi={bmi} onClose={hideOverlay} />
-					)}
-					{/* <button onClick={showOverlay}>click</button> */}
-
-					<p className="text-center bg-amber-500/35 rounded-3xl w-fit mx-auto px-6 py-3 mt-3 font-bold">
-						{bmi}
-					</p>
 
 					{/* History Component */}
 					<History bmiRecord={bmiRecord} />
 				</div>
+				{/* 
+						// Modal Component 
+						// Result Component 
+					*/}
+				{overlayIsShown && <Result bmi={bmi} onClose={hideOverlay} />}
+				{/* <button onClick={showOverlay}>click</button> */}
+
+				{/* <p className="text-center bg-amber-500/35 rounded-3xl w-fit mx-auto px-6 py-3 mt-3 font-bold">
+					{bmi}
+				</p> */}
 			</div>
 		</>
 	);

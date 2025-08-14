@@ -24,7 +24,16 @@
 @media (min-width: 768px) {
 	.modal {
 		width: 40rem;
+
 		left: calc(50% - 20rem);
+	}
+}
+
+@media (max-width: 768px) {
+	.modal {
+		top: 0vh;
+		height: 96%;
+		overflow-y: auto;
 	}
 }
 

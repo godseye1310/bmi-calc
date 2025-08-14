@@ -55,7 +55,7 @@ const BmiForm = ({ handleBmiResult }) => {
 	};
 
 	return (
-		<Card className={"max-w-lg w-full mx-auto mt-6"}>
+		<Card className={"max-w-lg w-full mt-6"}>
 			<form onSubmit={calcBmiHandler} className=" w-full">
 				<div className="bg-indigo-300 rounded-4xl w-fit mx-auto">
 					<button

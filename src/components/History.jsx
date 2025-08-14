@@ -1,23 +1,10 @@
 import { FaHistory } from "react-icons/fa";
 import Card from "./ui/Card";
 
-// const bmiArr = [
-// 	{ id: "1755131523303", date: "1755131523303", bmiValue: "23" },
-// 	{ id: "1755131524466", date: "1755131524466", bmiValue: "25" },
-// 	{ id: "1755131525138", date: "1755131525138", bmiValue: "30" },
-// 	{ id: "1755131525782", date: "1755131525782", bmiValue: "18.5" },
-// 	{ id: "1755132158599", date: "1755132158599", bmiValue: "16" },
-// 	{ id: "1755132160122", date: "1755132160122", bmiValue: "45" },
-// 	{ id: "1755132161190", date: "1755132161190", bmiValue: "36" },
-// 	{ id: "1755132163422", date: "1755132163422", bmiValue: "23.5" },
-// 	{ id: "1755132164470", date: "1755132164470", bmiValue: "20" },
-// 	{ id: "1755132165406", date: "1755132165406", bmiValue: "50" },
-// ];
-
 const History = ({ bmiRecord }) => {
 	// console.log(bmiRecord);
 	return (
-		<Card className={"max-w-lg w-full mx-auto mt-6 px-1"}>
+		<Card className={"max-w-lg w-full mt-6 px-1"}>
 			<div className="text-left">
 				<h3 className="text-2xl text-neutral-300 mb-5 pl-3 flex justify-start items-center gap-x-3">
 					History
