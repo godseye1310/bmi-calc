@@ -1,4 +1,4 @@
-// import { useState } from "react";
+
 import { useState } from "react";
 import BmiForm from "./components/BmiForm";
 import History from "./components/History";
@@ -9,7 +9,11 @@ function App() {
 	const [bmiRecord, setBmiRecord] = useState(
 		JSON.parse(localStorage.getItem("bmiLocalHistory")) || []
 	);
-
+	
+	const [overlayIsShown, setOverlayIsShown] = useState(false);
+	
+	import Result from "./components/Result.jsx"
+	
 	const handleBmiResult = (val) => {
 		setBmi(val);
 
@@ -34,6 +38,16 @@ function App() {
 			});
 		// console.log(history);
 	};
+	
+	
+
+	const showOverlay = () => {
+    setOverlayIsShown(true);
+  };
+
+  const hideOverlay = () => {
+    setOverlayIsShown(false);
+  };
 
 	return (
 		<>
@@ -53,6 +67,8 @@ function App() {
 						// Modal Component 
 						// Result Component 
 					*/}
+{overlayIsShown && <Result onClose={hideOverlay}/>}
+				<button onClick={showOverlay}>click</button>
 					<p className="text-center bg-amber-500/35 rounded-3xl w-fit mx-auto px-6 py-3 mt-3 font-bold">
 						{bmi}
 					</p>
