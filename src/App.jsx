@@ -19,6 +19,7 @@ function App() {
 		 * open modal
 		 * display result in the modal
 		 */
+		showOverlay();
 
 		const newBmi = {
 			bmi: val,
@@ -63,8 +64,11 @@ function App() {
 						// Modal Component 
 						// Result Component 
 					*/}
-					{overlayIsShown && <Result onClose={hideOverlay} />}
-					<button onClick={showOverlay}>click</button>
+					{overlayIsShown && (
+						<Result bmi={bmi} onClose={hideOverlay} />
+					)}
+					{/* <button onClick={showOverlay}>click</button> */}
+
 					<p className="text-center bg-amber-500/35 rounded-3xl w-fit mx-auto px-6 py-3 mt-3 font-bold">
 						{bmi}
 					</p>
