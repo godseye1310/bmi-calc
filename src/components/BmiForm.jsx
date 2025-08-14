@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Card from "./ui/Card";
 
-const BmiForm = () => {
+const BmiForm = ({ handleBmiResult }) => {
 	const [imperial, setImperial] = useState(false);
 
 	const [height, setHeight] = useState("");
@@ -36,7 +36,7 @@ const BmiForm = () => {
 
 		if (!imperial) {
 			bmi = num_weight / (num_Meter_height * num_Meter_height);
-			console.log(bmi.toFixed(1));
+			// console.log(bmi.toFixed(1));
 		} else {
 			let feet = Number(imperialHeight.feet);
 			let inches = Number(imperialHeight.inches);
@@ -44,8 +44,14 @@ const BmiForm = () => {
 			let totalInches = feet * 12 + inches;
 
 			bmi = 703 * (weight / (totalInches * totalInches));
-			console.log(bmi.toFixed(1));
 		}
+		console.log(bmi.toFixed(1));
+		handleBmiResult(bmi.toFixed(1));
+
+		// clear inputs
+		setHeight("");
+		setWeight("");
+		setImperialHeight({ feet: "", inches: "" });
 	};
 
 	return (
@@ -166,6 +172,7 @@ const BmiForm = () => {
 								id="weight"
 								placeholder={imperial ? "150 lbs" : "75 kg"}
 								required
+								step="0.1"
 								min={imperial ? "12" : "5"}
 								max={imperial ? "1545" : "700"}
 								value={weight}
