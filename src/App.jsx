@@ -1,20 +1,23 @@
-// import { useState } from "react";
-import "./App.css";
-import BMI from "./Lib/BMI.jsx"
+import { useState } from "react";
+import Result from "./components/Result.jsx"
 
 function App() {
-	// const [count, setCount] = useState(0);
+	const [overlayIsShown, setOverlayIsShown] = useState(false);
+
+	const showOverlay = () => {
+    setOverlayIsShown(true);
+  };
+
+  const hideOverlay = () => {
+    setOverlayIsShown(false);
+  };
 
 	return (
 		<>
 			<div>
-				<h1 className="text-5xl bg-amber-900">BMI CALCULATOR</h1>
-
-				{/* Form Component */}
 				{/* Modal Component */}
-				<BMI></BMI>
-				{/* Result Component */}
-				{/* History Component */}
+				{overlayIsShown && <Result onClose={hideOverlay}/>}
+				<button onClick={showOverlay}>click</button>
 			</div>
 		</>
 	);
