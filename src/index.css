@@ -67,6 +67,30 @@ button:focus-visible {
 	}
 
 	.app-heading {
-		@apply text-5xl w-fit mx-auto bg-gradient-to-r from-emerald-500 via-amber-500 to-rose-500 bg-clip-text text-transparent font-bold  m-5 p-5;
+		@apply text-5xl w-fit mx-auto bg-gradient-to-r from-emerald-500 via-amber-500 to-rose-500 bg-clip-text text-transparent font-bold  m-5 p-5 max-sm:text-4xl max-sm:mt-3 max-sm:mb-3 max-sm:p-3;
 	}
+}
+
+.bmiResult {
+	background-image: url("/src/assets/3d-w1.png");
+	background-size: contain;
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+.gauge-container {
+	margin: 6px auto;
+	position: relative;
+}
+
+#bmi-gauge {
+	/* max-width: 400px; */
+	height: auto;
+	transition: all 0.3s ease;
+}
+
+.needle {
+	/* transform-origin: 181.252px 178.533px; */
+	transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+	transform: rotate(-40.8deg); /* Start at 0 degrees */
 }

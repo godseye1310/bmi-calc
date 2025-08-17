@@ -5,7 +5,7 @@ const Category = (props) => {
 	let currCategory = Categories[props.weightCategory];
 
 	return (
-		<div className="p-5">
+		<div className="p-5 max-sm:p-3 max-sm:text-base max-[400px]:text-sm">
 			<p className="font-bold text-lg">You are {currCategory.name}</p>
 			<hr />
 			<div className="py-3">

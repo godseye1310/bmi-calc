@@ -3,14 +3,15 @@ import Modal from "./UI/Modal.jsx";
 import Category from "./Category.jsx";
 import WeightCat from "../utils/utilfunctions.js";
 import styles from "./Result.module.css";
+import BmiGauge from "./BmiGauge.jsx";
 
 const Result = (props) => {
 	let weightType = WeightCat(props.bmi);
-
+	// onClose={props.onClose}
 	return (
 		<Modal onClose={props.onClose}>
 			<div
-				className={`relative bg-amber-100 p-5 rounded-2xl ${
+				className={`relative bg-amber-100 p-5 max-sm:p-3 rounded-2xl ${
 					styles[weightType.cname]
 				}`}
 			>
@@ -22,14 +23,20 @@ const Result = (props) => {
 				</button>
 				<div className="mt-6">
 					{/* BMI Gauge */}
-					<div className="bg-gray-400 w-full h-36 mx-auto rounded-3xl pb-3 mb-3">
+					<div className="bg-gray-400 w-full mx-auto rounded-3xl pb-5 mb-3">
 						<h3 className="text-2xl text-center">BMI GAUGE</h3>
+						<div className="w-full">
+							<BmiGauge bmi={props.bmi} />
+						</div>
 					</div>
-					<div className="bg-black/80 p-5 rounded-3xl">
-						<h5 className="pl-5 text-3xl font-bold">
-							Your BMI is {props.bmi}
-						</h5>
-						<Category weightCategory={weightType.weightCat} />
+					{/* BMI Result */}
+					<div className="bg-black/80  rounded-3xl ">
+						<div className="p-5 pt-9 bmiResult">
+							<h5 className="pl-5 max-sm:pl-2 text-3xl font-bold">
+								Your BMI is {props.bmi}
+							</h5>
+							<Category weightCategory={weightType.weightCat} />
+						</div>
 					</div>
 				</div>
 			</div>
