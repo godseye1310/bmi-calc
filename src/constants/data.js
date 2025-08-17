@@ -1,3 +1,9 @@
+import w1_3d from "../assets/w1_3d.png";
+import w2_3d from "../assets/w2_3d.png";
+import w3_3d from "../assets/w3_3d.png";
+import w4_3d from "../assets/w4_3d.png";
+import w5_3d from "../assets/w5_3d.png";
+
 // export const bmiArr = [
 // 	{ id: "1755131523303", date: "1755131523303", bmiValue: "23" },
 // 	{ id: "1755131524466", date: "1755131524466", bmiValue: "25" },
@@ -61,3 +67,5 @@ export const Categories = [
 			"Medical supervision recommended. Adopt gradual calorie reduction, prioritize protein & fiber, and avoid crash diets. Include gentle but regular movement to improve cardiovascular health.",
 	},
 ];
+
+export const categoryBgImg = [w1_3d, w1_3d, w2_3d, w3_3d, w4_3d, w5_3d];

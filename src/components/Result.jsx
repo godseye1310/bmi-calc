@@ -1,13 +1,15 @@
 // import { useContext } from "react";
 import Modal from "./UI/Modal.jsx";
 import Category from "./Category.jsx";
-import WeightCat from "../utils/utilfunctions.js";
+import calcWeightCategory from "../utils/utilfunctions.js";
 import styles from "./Result.module.css";
 import BmiGauge from "./BmiGauge.jsx";
+import { categoryBgImg } from "../constants/data.js";
 
 const Result = (props) => {
-	let weightType = WeightCat(props.bmi);
-	// onClose={props.onClose}
+	let weightType = calcWeightCategory(props.bmi);
+
+	const bgImage = categoryBgImg[weightType.weightCat];
 	return (
 		<Modal onClose={props.onClose}>
 			<div
@@ -31,7 +33,11 @@ const Result = (props) => {
 					</div>
 					{/* BMI Result */}
 					<div className="bg-black/80  rounded-3xl ">
-						<div className="p-5 pt-9 bmiResult">
+						<div
+							className="p-5 pt-9 bmiResult"
+							// style={{ backgroundImage: bgImage }}
+							style={{ backgroundImage: `url(${bgImage})` }}
+						>
 							<h5 className="pl-5 max-sm:pl-2 text-3xl font-bold">
 								Your BMI is {props.bmi}
 							</h5>

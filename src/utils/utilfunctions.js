@@ -1,4 +1,4 @@
-export default function WeightCat(result) {
+export default function calcWeightCategory(result) {
 	let weightCat;
 	let cname;
 
