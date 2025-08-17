@@ -11,7 +11,7 @@ const Result = (props) => {
 	// onClose={props.onClose}
 	const bgImage = categoryBgImg[weightType.weightCat];
 	return (
-		<Modal>
+		<Modal onClose={props.onClose}>
 			<div
 				className={`relative bg-amber-100 p-5 max-sm:p-3 rounded-2xl ${
 					styles[weightType.cname]
