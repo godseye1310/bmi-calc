@@ -18,21 +18,23 @@ const Result = (props) => {
 				}`}
 			>
 				<button
-					className="text-xs bg-rose-400 hover:bg-rose-500 text-white font-bold py-1 px-2 rounded absolute top-2 right-5"
+					className="text-xs bg-red-600 hover:bg-rose-500 text-white font-bold py-1 px-2 rounded absolute top-2 right-5"
 					onClick={props.onClose}
 				>
 					X
 				</button>
 				<div className="mt-6">
 					{/* BMI Gauge */}
-					<div className="bg-gray-400 w-full mx-auto rounded-3xl pb-5 mb-3">
-						<h3 className="text-2xl text-center">BMI GAUGE</h3>
+					<div className="bg-black/85 w-full mx-auto rounded-t-3xl pb-0 mb-0">
+						<h3 className="text-2xl text-center text-neutral-500 font-black pb-0.5 pt-3">
+							BMI GAUGE
+						</h3>
 						<div className="w-full">
 							<BmiGauge bmi={props.bmi} />
 						</div>
 					</div>
 					{/* BMI Result */}
-					<div className="bg-black/80  rounded-3xl ">
+					<div className="bg-black/80  rounded-b-3xl ">
 						<div
 							className="p-5 pt-9 bmiResult"
 							// style={{ backgroundImage: bgImage }}

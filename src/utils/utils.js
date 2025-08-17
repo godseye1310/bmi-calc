@@ -43,7 +43,16 @@ export function updateGauge(bmi) {
 	}
 
 	return angle;
-	// Apply rotation to needle
-	// const needle = document.querySelector(".needle");
-	// needle.style.transform = `rotate(${angle}deg)`;
+}
+
+export function formatTimestamp(ms) {
+	const date = new Date(ms);
+	return date.toLocaleString("en-GB", {
+		day: "2-digit",
+		month: "short",
+		year: "numeric",
+		hour: "2-digit",
+		minute: "2-digit",
+		hour12: true,
+	});
 }

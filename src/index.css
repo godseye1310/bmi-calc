@@ -79,7 +79,7 @@ button:focus-visible {
 }
 
 .gauge-container {
-	margin: 6px auto;
+	margin: 3px auto 3px;
 	position: relative;
 }
 
