@@ -1,7 +1,17 @@
 // import React from "react";
 
+import { useEffect, useState } from "react";
+import { updateGauge } from "../utils/utils";
+
 const BmiGauge = ({ bmi }) => {
 	console.log(bmi);
+	const [needleAngle, setNeedleAngle] = useState(-40.8);
+	// const bmiGaugeAngle = updateGauge(bmi);
+
+	useEffect(() => {
+		const calculatedAngle = updateGauge(bmi); // Calculate inside effect
+		setNeedleAngle(calculatedAngle); // Update state with result
+	}, [bmi]); // Watch the bmi prop, not the calculated angle
 	return (
 		<div className="gauge-container">
 			<svg
@@ -78,9 +88,10 @@ const BmiGauge = ({ bmi }) => {
 											/>
 										</g>
 										<g
-											className="needlesss"
+											className="needle"
 											style={{
 												transformOrigin: "183px 156px",
+												transform: `rotate(${needleAngle}deg)`, // Apply the rotation
 											}}
 										>
 											<path

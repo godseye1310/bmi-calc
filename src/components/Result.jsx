@@ -8,10 +8,10 @@ import { categoryBgImg } from "../constants/data.js";
 
 const Result = (props) => {
 	let weightType = calcWeightCategory(props.bmi);
-
+	// onClose={props.onClose}
 	const bgImage = categoryBgImg[weightType.weightCat];
 	return (
-		<Modal onClose={props.onClose}>
+		<Modal>
 			<div
 				className={`relative bg-amber-100 p-5 max-sm:p-3 rounded-2xl ${
 					styles[weightType.cname]
