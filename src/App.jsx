@@ -12,6 +12,16 @@ function App() {
 
 	const [overlayIsShown, setOverlayIsShown] = useState(false);
 
+	const seeDetails = (val) => {
+		setBmi(val);
+		showOverlay();
+	}
+
+	const clear = () => {
+		setBmiRecord([]);
+		localStorage.removeItem("bmiLocalHistory");
+	}
+
 	const handleBmiResult = (val) => {
 		setBmi(val);
 
@@ -61,7 +71,7 @@ function App() {
 					<BmiForm handleBmiResult={handleBmiResult} />
 
 					{/* History Component */}
-					<History bmiRecord={bmiRecord} />
+					<History bmiRecord={bmiRecord} seeDetails={seeDetails} clear={clear}/>
 				</div>
 				{/* 
 						// Modal Component 
