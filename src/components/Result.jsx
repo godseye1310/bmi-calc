@@ -2,18 +2,18 @@
 import Modal from "./UI/Modal.jsx";
 import Category from "./Category.jsx";
 import WeightCat from "../Lib/utilfunctions.js";
+import classes from "./Result.module.css"
 
-let bmi = 36 ;
+let bmi = 35 ;
 const Result = (props) => {
-
 
     let weightType = WeightCat(bmi);
 
     return(
         <Modal onClose={props.onClose}>
-            <div>
+            <div className={classes[weightType.cname]}>
                 <h5>Your BMI is {bmi}</h5>
-                <Category type={weightType}/>
+                <Category type={weightType.weightCat}/>
             </div>
             <button onClick={props.onClose}>
                 Close
