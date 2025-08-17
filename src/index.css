@@ -70,3 +70,72 @@ button:focus-visible {
         @apply text-5xl w-fit mx-auto bg-gradient-to-r from-emerald-500 via-amber-500 to-rose-500 bg-clip-text text-transparent font-bold  m-5 p-5;
     }
 }
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	/* line-height: 1.5;
+	font-weight: 400; */
+
+	/* color: rgba(255, 255, 255, 0.87); */
+	/* background-color: #242424; */
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	min-height: 100vh;
+	font-family: Arial, sans-serif;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	padding: 12px;
+	display: flex;
+	scroll-behavior: smooth;
+	/* flex-direction: column; */
+	/* align-items: center; */
+	/* justify-content: start; */
+}
+
+#root {
+	width: 100%;
+	max-width: 1320px;
+	margin: 0 auto;
+}
+
+button {
+	font-weight: 600;
+	font-family: inherit;
+	/* color: #ffffff; */
+	cursor: pointer;
+	transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+	outline: 0px auto -webkit-focus-ring-color;
+}
+
+@layer components {
+	.input-field {
+		@apply border-2 px-1 py-1.5 rounded-lg text-neutral-900 text-lg font-medium border-gray-300 bg-neutral-100 focus:bg-indigo-100 text-center focus:outline-none focus:border-indigo-400;
+	}
+	.btn-submit {
+		@apply px-9 py-3 border-none text-white rounded-3xl text-base cursor-pointer;
+		background: linear-gradient(45deg, #667eea, #764ba2);
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+	.btn-submit:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	}
+
+	.app-heading {
+		@apply text-5xl w-fit mx-auto bg-gradient-to-r from-emerald-500 via-amber-500 to-rose-500 bg-clip-text text-transparent font-bold  m-5 p-5;
+	}
+}
